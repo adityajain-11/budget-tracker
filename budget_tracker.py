@@ -1,4 +1,6 @@
+# budget_tracker.py
 import csv
+import cs50
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -8,11 +10,11 @@ def main():
     load_from_csv()  # load saved data at start
     while True:
         print("\n1. Add Expense\n2. View Summary\n3. View Pie Chart\n4. Save & Exit")
-        choice = input("\nChoose an option: ")
+        choice = cs50.get_string("\nChoose an option: ")
 
         if choice == "1":
-            category = input("Enter category: ")
-            amount = int(input("Enter amount: "))
+            category = cs50.get_string("Enter category: ")
+            amount = cs50.get_int("Enter amount: ")
             add_expense(category, amount)
         elif choice == "2":
             view_summary()
