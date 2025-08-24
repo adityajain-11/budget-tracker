@@ -1,4 +1,10 @@
 # budget_tracker.py
+
+import os
+os.environ["MPLCONFIGDIR"] = "/tmp/matplotlib"  # avoids config noise
+import logging
+logging.getLogger("matplotlib").setLevel(logging.ERROR)
+
 import csv
 import cs50
 import pandas as pd
