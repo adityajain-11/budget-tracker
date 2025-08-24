@@ -71,7 +71,11 @@ def visualize_expenses():
     df.groupby("category").sum().plot(kind="pie", y="amount", autopct='%1.1f%%')
     plt.title("Expense Breakdown by Category")
     plt.ylabel("")  # cleaner chart
-    plt.show()
+    filename = "expenses_pie.png"
+    plt.savefig(filename)
+    plt.close()  # close figure so it doesn’t stack
+    print(f"Pie chart saved as {filename}. Open it from the Explorer to view.")
+
 
 if __name__ == "__main__":
     main()
