@@ -1,0 +1,10 @@
+*.bak
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+budget.db
+*.csv
+*.png
