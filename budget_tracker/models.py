@@ -55,3 +55,25 @@ class BudgetLimit:
         if self.limit <= 0:
             raise ValueError("limit must be positive")
         self.category = self.category.strip().title()
+
+
+@dataclass
+class RecurringExpense:
+    """A rule that auto-generates an Expense on a given day each month."""
+
+    category: str
+    amount: float
+    day_of_month: int
+    note: str = ""
+    active: bool = True
+    last_applied_month: str | None = None  # "YYYY-MM" of the last month it fired
+    id: int | None = None
+
+    def __post_init__(self) -> None:
+        if self.amount <= 0:
+            raise ValueError("amount must be positive")
+        if not self.category.strip():
+            raise ValueError("category must not be empty")
+        if not 1 <= self.day_of_month <= 28:
+            raise ValueError("day_of_month must be between 1 and 28 (to stay valid every month)")
+        self.category = self.category.strip().title()
