@@ -24,3 +24,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 packages = ["budget_tracker"]
+[tool.ruff.lint]
+# DTZ: this app only ever deals in calendar dates, not timezone-aware
+# datetimes, so timezone-naive date construction is intentional here.
+ignore = ["DTZ"]
