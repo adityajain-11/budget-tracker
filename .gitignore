@@ -5,6 +5,12 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 *.egg-info/
+build/
+dist/
 budget.db
+*.db
 *.csv
-*.png.DS_Store
+*.png
+.DS_Store
+.venv/
+venv/
