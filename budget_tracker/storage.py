@@ -45,7 +45,7 @@ class SqliteStorage:
 
     def __init__(self, db_path: str | Path = "budget.db") -> None:
         self.db_path = Path(db_path)
-        self._conn = sqlite3.connect(self.db_path)
+        self._conn = sqlite3.connect(self.db_path, check_same_thread=False)
         self._conn.row_factory = sqlite3.Row
         self._init_schema()
 
