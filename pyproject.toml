@@ -9,6 +9,11 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+dashboard = [
+    "streamlit>=1.30",
+    "pandas>=2.0",
+]
+
 dev = [
     "pytest>=7.0",
     "ruff>=0.4",

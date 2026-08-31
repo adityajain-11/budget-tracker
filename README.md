@@ -101,8 +101,19 @@ python3 -m mypy budget_tracker  # type-check
 
 All three run automatically in CI on every push and pull request.
 
+
+## Dashboard
+
+A Streamlit dashboard is included as a second interface on top of the same data and logic as the CLI:
+
+```bash
+python3 -m pip install -e ".[dashboard]"
+streamlit run app.py
+```
+
+It gives you expense entry, an editable table with delete, category and monthly bar charts, budget progress bars with an over-budget warning, recurring-rule management, and the same auto-generated insights as the CLI's `insights` command. Recurring expenses are also auto-applied each time the dashboard loads.
+
 ## Possible next steps
 
-- A Streamlit dashboard on top of the same `BudgetTracker` API
 - Search/filter transactions
 - Multi-currency support
